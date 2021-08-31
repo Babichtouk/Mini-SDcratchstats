@@ -1,0 +1,10 @@
+import requests
+user = (input("ton nom d'utilisateur:"))
+stats = requests.get("https://scratchdb.lefty.one/v3/user/info/"+ user)
+stats = stats.json()
+print("loves:"+str(stats["statistics"]["loves"]))
+print("favorites:"+str(stats["statistics"]["favorites"]))
+print("views:"+str(stats["statistics"]["views"]))
+print("followers:"+str(stats["statistics"]["followers"]))
+print("following:"+str(stats["statistics"]["following"]))
+print("country:"+str(stats["country"]))
